@@ -1,4 +1,4 @@
-# projekt3-pzaw
+# projekt4-pzaw
 Project allows the user to add messages to a board upon login/signup  
 All messages are stored in an integrated database  
 Users can edit and delete their own messages  
