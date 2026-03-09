@@ -31,10 +31,10 @@
         <%= msg.message %>
   
         <% if (currentUserId && (msg.user_id === currentUserId || isAdmin)) { %>
-          <form action="/delete/<%= msg.id %>" method="POST" style="display:inline">
+          <form action="/delete/<%= msg.id %>" method="POST" class="editbut">
             <button type="submit">Delete</button>
           </form>
-          <form action="/edit/<%= msg.id %>" method="GET" style="display:inline">
+          <form action="/edit/<%= msg.id %>" method="GET" class="editbut">
             <button type="submit">Edit</button>
           </form>
         <% } %>
