@@ -14,13 +14,10 @@ The project comes with:
 ‎        - display name: Administrator  
 ‎        - password: admin123  
 ‎        - email: admin@admin.admin     
-	‎  
-        ‎  
-								‎   
+	‎  			‎   
 ‎				* If createAdmin() is still in index.js a new admin account with the same info will be created on startup  
     ‎  
-‎  
-‎  
+	    ‎  
 Setup:    
 ‎  	- Install ejs, express, sqlite3, brcyptjs and express-session     
 ‎  	- To run the project open the project directory in the terminal and type "node index.js", then in your web browser open localhost:8000      
