@@ -19,5 +19,5 @@ The project comes with:
     ‎  
 	    ‎  
 Setup:    
-‎  	- Install ejs, express, sqlite3, brcyptjs and express-session     
+‎  	- Run "npm i" in project directory through the terminal  
 ‎  	- To run the project open the project directory in the terminal and type "node index.js", then in your web browser open localhost:8000      
