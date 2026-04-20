@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('partials/header') %>
+<head>
+  <meta charset="UTF-8">
+  <title>Login</title>
+</head>
+
+<body>
+  <h1>Login</h1>
+  <form action="/" class="gotomain"><button type="submit">To message board</button></form>
+  <form action="/login" method="POST">
+    <input type="text" name="username" placeholder="Username/Email" required>
+    <input type="password" name="password" placeholder="Password" required>
+    <button type="submit">Login</button>
+  </form>
+  <form action="/signup" class="signup">
+    <p>Don't have an account yet?</p><br><button type="submit">Sign Up</button>
+  </form>
+</body>
+
+</html>

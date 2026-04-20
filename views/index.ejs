@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+<%- include('partials/header') %>
 <head>
   <meta charset="UTF-8">
   <title>Message board</title>
-  <link rel="stylesheet" href="/style.css">
 </head>
+
 <body>
   <h1>Message board</h1>
   <form action="/login" class="logform"><button type="submit">Log in</button></form>
@@ -17,29 +18,33 @@
     <form action="/logout" method="GET" class="logform">
       <button type="submit">Logout</button>
     </form>
-  <% } %>
+    <% } %>
 
-  <h2>Messages:</h2>
-  <ul>
-    <% messages.forEach(msg => { %>
-      <li>
-        <% if (currentUserId && msg.user_id === currentUserId) { %>
-          <strong><%= msg.name %></strong>
-        <% } else { %>
-          <%= msg.name %>
-        <% } %>:
-        <%= msg.message %>
-  
-        <% if (currentUserId && (msg.user_id === currentUserId || isAdmin)) { %>
-          <form action="/delete/<%= msg.id %>" method="POST" class="editbut">
-            <button type="submit">Delete</button>
-          </form>
-          <form action="/edit/<%= msg.id %>" method="GET" class="editbut">
-            <button type="submit">Edit</button>
-          </form>
-        <% } %>
-      </li>
-    <% }) %>
-  </ul>
+      <h2>Messages:</h2>
+      <ul>
+        <% messages.forEach(msg=> { %>
+          <li>
+            <% if (currentUserId && msg.user_id===currentUserId) { %>
+              <strong>
+                <%= msg.name %>
+              </strong>
+              <% } else { %>
+                <%= msg.name %>
+                  <% } %>:
+                    <%= msg.message %>
+
+                      <% if (currentUserId && (msg.user_id===currentUserId || isAdmin)) { %>
+                        <form action="/delete/<%= msg.id %>" method="POST" class="editbut">
+                          <button type="submit">Delete</button>
+                        </form>
+                        <form action="/edit/<%= msg.id %>" method="GET" class="editbut">
+                          <button type="submit">Edit</button>
+                        </form>
+                        <% } %>
+          </li>
+          <% }) %>
+      </ul>
+
 </body>
+
 </html>

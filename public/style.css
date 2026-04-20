@@ -6,14 +6,23 @@
   font-family: Arial, Helvetica, sans-serif;
 }
 
+/* LIGHT MODE (default) */
 body {
   background-color: #f4f6f8;
   color: #333;
   padding: 40px;
   max-width: 700px;
   margin: 0 auto;
+  transition: background 0.2s ease, color 0.2s ease;
 }
 
+/* DARK MODE */
+body.dark-mode {
+  background-color: #121212;
+  color: #e4e6eb;
+}
+
+/* Headings */
 h1 {
   text-align: center;
   margin-bottom: 20px;
@@ -21,6 +30,12 @@ h1 {
 
 h2 {
   margin: 30px 0 10px 0;
+}
+
+/* Dark headings */
+body.dark-mode h1,
+body.dark-mode h2 {
+  color: #ffffff;
 }
 
 /* Forms */
@@ -32,6 +47,12 @@ form {
   display: flex;
   flex-direction: column;
   gap: 10px;
+}
+
+/* Dark forms */
+body.dark-mode form {
+  background: #1e1e1e;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
 }
 
 /* Inputs & select */
@@ -46,11 +67,36 @@ textarea {
   font-size: 16px;
 }
 
+/* Dark inputs */
+body.dark-mode input[type="text"],
+body.dark-mode input[type="password"],
+body.dark-mode input[type="email"],
+body.dark-mode select,
+body.dark-mode textarea {
+  border: 1px solid #444;
+  background-color: #2a2a2a;
+  color: #e4e6eb;
+}
+
+/* Placeholder (dark only) */
+body.dark-mode input::placeholder,
+body.dark-mode textarea::placeholder {
+  color: #aaa;
+}
+
+/* Focus */
 input:focus,
 select:focus,
 textarea:focus {
   outline: none;
   border-color: #007bff;
+}
+
+/* Dark focus */
+body.dark-mode input:focus,
+body.dark-mode select:focus,
+body.dark-mode textarea:focus {
+  border-color: #4dabf7;
 }
 
 /* Buttons */
@@ -68,6 +114,15 @@ button:hover {
   background-color: #0056b3;
 }
 
+/* Dark buttons */
+body.dark-mode button {
+  background-color: #4dabf7;
+}
+
+body.dark-mode button:hover {
+  background-color: #339af0;
+}
+
 /* Lists */
 ul {
   list-style: none;
@@ -81,12 +136,22 @@ li {
   border-radius: 5px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
   display: inline-block;
-  width:100%;
-  
+  width: 100%;
+}
+
+/* Dark list items */
+body.dark-mode li {
+  background: #1e1e1e;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
 }
 
 li strong {
   color: #007bff;
+}
+
+/* Dark strong */
+body.dark-mode li strong {
+  color: #4dabf7;
 }
 
 /* Form positioning */
@@ -116,11 +181,17 @@ li strong {
 }
 
 .editbut {
-  float:right;
+  float: right;
   height: 100%;
   margin-left: 0.75%;
   margin-right: 0.75%;
-  padding:1%;
+  padding: 1%;
   padding-left: 1.5%;
   padding-right: 1.5%;
+}
+
+.theme-button {
+  float:left;
+  position: absolute;
+  left: 4vw;
 }

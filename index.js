@@ -198,11 +198,11 @@ app.get("/about", (req, res) => {
 });
 
 app.get("/login", (req, res) => {
-  res.sendFile(path.join(__dirname, "views", "login.html"));
+  res.render("login");
 });
 
 app.get("/signup", (req, res) => {
-  res.sendFile(path.join(__dirname, "views", "signup.html"));
+  res.render("signup");
 });
 
 app.listen(port, () => {
